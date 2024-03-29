@@ -1,5 +1,5 @@
 import Image from "next/image";
-import {PetCard} from "./ui/pet-card";
+import PetCard from "./ui/pet-card";
 
 export default function Home() {
   return (
