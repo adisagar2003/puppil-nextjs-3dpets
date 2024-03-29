@@ -5,11 +5,9 @@ import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { Euler, Object3D, Vector3 } from 'three';
-
 export default function PetCard({petName, petImage}: {petName: string, petImage: string}) {
 
     const [playing, setPlaying] = useState(false);
-
     // 3d Object rotation.
     function startObjectRotation(object: Object3D, rotationRate:number) : void {
         
@@ -20,8 +18,9 @@ export default function PetCard({petName, petImage}: {petName: string, petImage:
         setPlaying(false);
     }
 
+    // 3d model reference     
     function FoxModel() {
-        const gltf = useLoader(GLTFLoader, '/fox.gltf');
+        const gltf = useLoader(GLTFLoader, "/fox.gltf");
         return <primitive object={gltf.scene} />
     }
 
@@ -52,11 +51,10 @@ export default function PetCard({petName, petImage}: {petName: string, petImage:
             <ambientLight intensity={0.01} />
             <directionalLight color="white" position={[0, 0, 5]} />
             <ModelSetup />
-            </Canvas>
+            </Canvas> 
             <span className="font-bold p-7 mt-auto">
                 {petName}
             </span>
-            
         </div>
     )
 }
