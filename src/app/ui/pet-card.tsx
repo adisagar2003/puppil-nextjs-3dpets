@@ -17,7 +17,7 @@ export default function PetCard({petName, petImage}: {petName: string, petImage:
 
     // 3d object stops rotation
     function stopObjectRotation(object: Object3D) : void  {
-    
+        setPlaying(false);
     }
 
     function FoxModel() {
@@ -30,7 +30,7 @@ export default function PetCard({petName, petImage}: {petName: string, petImage:
         useFrame(({ clock }) => {
             const a = clock.getElapsedTime();
             if (playing) {
-                myMesh.current.rotation.y = clock.elapsedTime;
+                myMesh.current.rotation.y += 0.01;
             }
           });
         
@@ -39,6 +39,7 @@ export default function PetCard({petName, petImage}: {petName: string, petImage:
                 ref={myMesh}
                 onPointerEnter={e=>{startObjectRotation(e.object,12)}}
                 onPointerLeave={e=>{stopObjectRotation(e.object)}}
+                scale={3}
             >
                 <FoxModel />
                 <meshStandardMaterial />
