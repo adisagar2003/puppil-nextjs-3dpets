@@ -5,7 +5,7 @@ import { GLTFLoader } from 'three/examples/jsm/Addons.js';
 import Image from 'next/image';
 import React, { useState } from 'react';
 import { Euler, Object3D, Vector3 } from 'three';
-export default function PetCard({petName, petImage}: {petName: string, petImage: string}) {
+export default function PetCard({petName, petImage, id}: {petName: string, petImage: string, id:string}) {
 
     const [playing, setPlaying] = useState(false);
     // 3d Object rotation.
