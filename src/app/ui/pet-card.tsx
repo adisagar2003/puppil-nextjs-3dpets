@@ -20,7 +20,7 @@ export default function PetCard({petName, petImage, id}: {petName: string, petIm
 
     // 3d model reference     
     function FoxModel() {
-        const gltf = useLoader(GLTFLoader, "/fox.gltf");
+        const gltf = useLoader(GLTFLoader, `./${petImage}`);
         return <primitive object={gltf.scene} />
     }
 
